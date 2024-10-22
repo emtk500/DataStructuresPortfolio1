@@ -4,7 +4,7 @@
 // Det er vigtigt at optimere algoritmen, så overflødige rekursive kald undgås
 
 
-public class recursive{
+public class ExerciseOne{
 
     public static int sumOfOddSquares(int N){
         // Base-case: Hvis N er 0 eller negativt, returner 0
@@ -26,7 +26,7 @@ public class recursive{
     public static void main(String[]args){
 
         int N = 8;
-        sumOfOddSquares(N);
+        System.out.println(sumOfOddSquares(N));
 
     }
 
