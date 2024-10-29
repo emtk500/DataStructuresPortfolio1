@@ -19,21 +19,21 @@
 public class ExerciseSeven {
 
     public static int[] checkInt(int Z) {
-        // Check for invalid input
+        // Tjekker om input er valid
         if (Z <= 2 || Z >= 100000) {
-            return new int[]{-1, -1}; // Dummy return value for invalid Z
+            return new int[]{-1, -1};
         }
 
-        int bestX = -1; // To store the best (largest) X
-        int bestY = -1; // To store the corresponding Y
+        int bestX = -1;
+        int bestY = -1;
 
-        // Iterate over possible values for X
+        // Itererer igennem mulige værdier for X
         for (int x = 3; x <= Math.sqrt(Z); x++) {
-            // Calculate potential Y using logarithm
+            // Udregner mulige Y værdier ved brug af logaritmer
             double yDouble = Math.log(Z) / Math.log(x);
             int y = (int) yDouble; // Truncate to integer
 
-            // Check if X^Y equals Z and Y > 2
+            // Se om X^Y = Z og om Y > 2
             if (Math.pow(x, y) == Z && y > 2) {
                 if (bestX < x) { // Check if this is the largest X found
                     bestX = x;
@@ -42,11 +42,11 @@ public class ExerciseSeven {
             }
         }
 
-        // If a solution was found, return it, otherwise return dummy values
+        // Returner dummy tal hvis der ikke er en løsning
         if (bestX != -1) {
             return new int[]{bestX, bestY};
         } else {
-            return new int[]{-1, -1}; // Dummy return for no solution
+            return new int[]{-1, -1};
         }
     }
 
